@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.count);
+  const todos = useSelector((state) => state.todos.todos);
 
+  const fetchTodo = () => dispatch({ type: "FETCH_TODO" });
   const increment = () => {
     dispatch({ type: "INC" });
   };
@@ -13,6 +15,8 @@ function App() {
       <header className="App-header">
         <h1>Counter: {count.count}</h1>
         <button onClick={increment}>Inc</button>
+        <button onClick={fetchTodo}>FETCH_TODO</button>
+        <h1>{JSON.stringify(todos)}</h1>
       </header>
     </div>
   );
