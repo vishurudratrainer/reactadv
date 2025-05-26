@@ -1,0 +1,50 @@
+import {ErrorBoundary} from 'react-error-boundary';
+
+function ErrorFallback({error}) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{color: 'red'}}>{error.message}</pre>
+    </div>
+  )
+}
+
+const BuggyCounter = () => {
+  const [count, setCount] = React.useState(0);
+
+  const handleIncrement = () => {
+    setCount(preVal => preVal + 1);
+  }
+
+  if(count === 5){
+      throw new Error("New Crashing Seq. Initiated");
+  }
+
+  return(
+    <div className="counter--block">
+      <span>Count</span>
+      <span>{count}</span>
+      <button onClick={handleIncrement}>Increment count</button>
+      </div>
+  );
+}
+const App = () => {
+  return(
+    <>
+    <h1>Counter Example</h1>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+
+        <BuggyCounter />
+    </ErrorBoundary>
+      </>
+  )
+}
+
+ReactDOM.render(
+  <App/>,
+  document.getElementById("root")
+);
+
+
+https://www.joshwcomeau.com/react/server-components/
+https://github.com/sheth-jay/React-18-SSR-Implementation
