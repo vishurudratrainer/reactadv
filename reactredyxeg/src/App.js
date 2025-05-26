@@ -1,13 +1,13 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import Todo from "./Todo";
-
+import { FETCH_TODO } from "./ActionTypes";
 function App() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.count);
   const todos = useSelector((state) => state.todos.todos);
 
-  const fetchTodo = () => dispatch({ type: "FETCH_TODO" });
+  const fetchTodo = () => dispatch({ type: FETCH_TODO });
   const increment = () => {
     dispatch({ type: "INC" });
   };
