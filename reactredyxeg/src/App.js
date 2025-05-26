@@ -1,5 +1,6 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
+import Todo from "./Todo";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Todo/>
         <h1>Counter: {count.count}</h1>
         <button onClick={increment}>Inc</button>
         <button onClick={fetchTodo}>FETCH_TODO</button>

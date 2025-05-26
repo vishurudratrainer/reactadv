@@ -8,6 +8,11 @@ const TodosMiddleware =
           .then((data) => data.json())
           .then((data) => dispatch({ type: "FETCHED_TODO", data: data }));
       }
+      if (action.type === "FETCH_TODO_ID") {
+        fetch("https://jsonplaceholder.typicode.com/todos/"+action.todoId)
+          .then((data) => data.json())
+          .then((data) => dispatch({ type: "FETCHED_TODO", data: [data] }));
+      }
     }
 
     next(action);
