@@ -1,6 +1,6 @@
-import { legacy_createStore } from "redux";
+import { legacy_createStore, combineReducers } from "redux";
 import CountReducer from "./CountReducer";
 
-const store=legacy_createStore(CountReducer)
+const store = legacy_createStore(combineReducers({ count: CountReducer }));
 
-export default store
+export default store;
