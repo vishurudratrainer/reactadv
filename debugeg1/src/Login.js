@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import LoggedInContext from "./LoggedInContext";
+import UserContext from "./UserContext";
 export default function Login(props) {
  const loggedInContext = useContext(LoggedInContext)
+ const userContext = useContext(UserContext)
  const {setLoggedIn} =loggedInContext
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ export default function Login(props) {
     e.preventDefault();
     if (username === password && username.length > 0) {
       setLoggedIn(true);
+      userContext.setLogUserName(username)
       navigate("/todos1", { state: { username: username, date: new Date() } });
     }
   };

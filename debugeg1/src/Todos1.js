@@ -4,7 +4,9 @@ import { useLocation } from "react-router-dom";
 import NotLoggedIn from "./NotLoggedIn";
 import { useContext } from "react";
 import LoggedInContext from "./LoggedInContext";
+import UserContext from "./UserContext";
 export default function Todo1(props) {
+   const userContext = useContext(UserContext)
   const [todos, setTodos] = useState({ data: [], headers: [] });
   const location = useLocation();
   const loggedInContext = useContext(LoggedInContext);
@@ -32,6 +34,7 @@ export default function Todo1(props) {
     <div>
       <NotLoggedIn loggedIn={loggedIn}/>
       {loggedIn && (<div>
+      <h1>User from Context {userContext.logUserName}</h1> 
       <h1>Welcome {location?.state?.username}</h1>
       <button onClick={fetchTodo}>Fetch Todos from Todo1</button>
       <ModifiedTable1 tableData={todos.data} properties={todos.headers} /></div>)}
