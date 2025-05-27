@@ -1,3 +1,27 @@
+HOC
+// Example of a simple HOC
+function withLog(WrappedComponent) {
+  return function WithLog(props) {
+    console.log(`Rendering ${WrappedComponent.name}`);
+    return <WrappedComponent {...props} />;
+  };
+}
+
+// Usage with a functional component
+function MyComponent(props) {
+  return <div>Hello, {props.name}!</div>;
+}
+
+const MyComponentWithLog = withLog(MyComponent);
+
+// Now MyComponentWithLog will log a message before rendering MyComponent
+<MyComponentWithLog name="World" />
+
+
+
+/****************************/
+
+
 import {ErrorBoundary} from 'react-error-boundary';
 
 function ErrorFallback({error}) {
