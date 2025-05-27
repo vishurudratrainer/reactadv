@@ -440,3 +440,63 @@ class App extends Component {
     )
   }
 }
+
+
+/*************8/
+import React, { useState } from 'react'
+import './App.css';
+import Modal from './Modal.jsx';
+export default function App() {
+ const [isOpen, setOpen]= useState(false)
+ return (
+   <div>
+     <button onClick={()=> {setOpen(true)}}>show button</button>
+     <Modal isOpen= {isOpen} onClose={()=>setOpen(false)}/>
+   </div>
+ )
+};
+
+import React from 'react'
+import {createPortal} from 'react-dom';
+import './Modal.css';
+export default function Modal({isOpen, onClose}) {
+   if(!isOpen)return null;
+ return createPortal(
+   <div className='modal'>
+       <div className='modal-container'>
+           <div  className='modal-body'>
+               <p>sample modal</p>
+           </div>
+           <button onClick={onClose}>Close</button>
+       </div>
+    
+   </div>
+   , document.getElementById('modal') // this will let react-dom know that we want to render this modal outside the current React tree
+ )
+}
+
+
+p{
+   color: black;
+}
+.modal{
+   position: fixed;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   overflow: auto;
+
+}
+
+
+.modal-container{
+   background-color: #fefffe;
+   margin: 10% auto;
+   width: 50%;
+   padding: 10px;
+
+
+}
