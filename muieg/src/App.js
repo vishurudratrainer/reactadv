@@ -1,9 +1,12 @@
 import './App.css';
-import Counter from './Counter'
+import {BrowserRouter} from "react-router-dom"
+import Nav from "./Nav"
 function App() {
   return (
     <div className="App">
-     <Counter/>
+      <BrowserRouter>
+      <Nav/>
+     </BrowserRouter>
     </div>
   );
 }
