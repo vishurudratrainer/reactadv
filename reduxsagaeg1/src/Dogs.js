@@ -11,7 +11,7 @@ export default function Dogs() {
     <div>
       <button onClick={todoFetch}>Fetch Dog</button>
       <br/>
-      {message.length === 0 ? <div></div> : <img src={message} width={"300"} ></img>}
+      {message.length === 0 ? <div></div> : <img src={message} width={"300"} alt="No"></img>}
     </div>
   );
 }

@@ -4,6 +4,8 @@ import axios from "axios";
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
   yield takeLatest("FETCH_DOGS", workerSaga);
+  yield takeLatest("FETCH_TODO", toDoworkerSaga);
+
 }
 
 // function that makes the api request and returns a Promise for response
@@ -11,6 +13,13 @@ function fetchDog() {
   return axios({
     method: "get",
     url: "https://dog.ceo/api/breeds/image/random"
+  });
+}
+
+function fetchTodo() {
+  return axios({
+    method: "get",
+    url: "https://jsonplaceholder.typicode.com/todos/"
   });
 }
 
@@ -27,5 +36,20 @@ function* workerSaga() {
   } catch (error) {
     // dispatch a failure action to the store with the error
     yield put({ type: "FETCHED_DOGS_FAILURE", error });
+  }
+}
+
+function* toDoworkerSaga() {
+  try {
+    const response = yield call(fetchTodo);
+    //call method is used for async calls
+    const data = response.data;
+
+    // dispatch a success action to the store with the new dog
+    yield put({ type: "FETCHED_TODO_SUCCESS", data });
+  
+  } catch (error) {
+    // dispatch a failure action to the store with the error
+    yield put({ type: "FETCHED_TODO_FAILURE", error });
   }
 }
