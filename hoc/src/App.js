@@ -1,5 +1,6 @@
 import "./App.css";
 import InputComponent from "./InputComponent";
+import LoginComponent from "./LoginComponent";
 import ModifiedTextComponent from "./ModifiedTextComponent";
 import NewFeatureComponent from "./NewFeatureComponent";
 import PostComponent from "./PostComponent";
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <LoginComponent/>
         {/**<ModifiedTextComponent text="I am the modified one" />
         <TextComponent text="Hello from normal component"></TextComponent>
         <InputComponent />**/}
