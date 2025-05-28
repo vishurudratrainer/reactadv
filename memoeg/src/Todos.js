@@ -3,12 +3,14 @@ import { useState, useMemo } from "react";
 export default function Todos() {
   const [todos, setTodos] = useState([]);
   const [total, setTotal] = useState(0);
+  const [todoFirst,setTodoFirst]=useState("")
   const fetchTodos = () =>
     fetch("https://jsonplaceholder.typicode.com/todos/")
       .then((data) => data.json())
       .then((data) => {
         setTodos(data);
         setTotal(calculateTotal(data));
+        setTodoFirst(JSON.stringify(data))
       });
   const calculateTotal = (data) => {
     let sum = 0;
@@ -18,12 +20,13 @@ export default function Todos() {
     return sum;
   };
   const finalTotalValue = useMemo(() => {
+    console.log("useMemo")
     let sum = 0;
     for (let i = 0; i < todos.length; i++) {
       sum = sum + todos[i].id;
     }
     return sum;
-  }, [todos]);
+  }, [todoFirst]);
 
   return (
     <div>
