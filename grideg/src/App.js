@@ -1,10 +1,11 @@
 import './App.css';
+import DoubleGrid from './DoubleGrid';
 import Todos from './Todos';
 
 function App() {
   return (
     <div className="App">
-     <Todos/>
+    <DoubleGrid/>
     </div>
   );
 }
