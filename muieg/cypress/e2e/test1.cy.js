@@ -18,5 +18,6 @@ describe("template spec", () => {
 
     cy.get("#fetchTodoById").click()
     cy.get("[data-field='userId']").should("have.length",1)
+    cy.get("[data-field='userId']").should("have.text","USERID2")
   });
 });
