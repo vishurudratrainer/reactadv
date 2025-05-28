@@ -16,13 +16,13 @@ export default function TodosById() {
   return (
     <div>
       <TextField
-        id="outlined-basic"
+        id="todoId"
         label="Enter Todo Id"
         variant="outlined"
         onChange={onChange}
       />
       <br />
-      <Button variant="contained" onClick={onFetch}>
+      <Button id="fetchTodoById" variant="contained" onClick={onFetch}>
         Fetch Todo by Id
       </Button>
       <Table rows={todo} />
