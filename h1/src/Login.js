@@ -2,16 +2,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "./AuthContext";
+import UserContext from "./UserContext";
 export default function Login(props) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const authContext = useContext(AuthContext);
-
+  const userContext = useContext(UserContext);
   const navigate = useNavigate();
   const performLogin = (e) => {
     e.preventDefault();
     if (username.length > 0 && username === password) {
       authContext.setToken(true);
+      userContext.setUser(username);
       navigate("/counter");
     }
   };
