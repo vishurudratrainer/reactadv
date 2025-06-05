@@ -10,6 +10,7 @@ import PostForm from "./components/PostForm";
 import InputComponent from "./components/InputComponent";
 import PrivateComponent from "./components/PrivateComponent";
 import LoginComponent from "./components/LoginComponent";
+import PostComponent from "./components/PostComponent";
 
 export default function Nav(props) {
   return (
@@ -34,6 +35,8 @@ export default function Nav(props) {
           <br />
           <Link to={"/hoc3"}>HOC Hover3</Link>
           <br />
+          <Link to={"/hoc4"}>HOC Hover4</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -48,6 +51,7 @@ export default function Nav(props) {
           <Route path="/hoc1" element={<InputComponent />} />
           <Route path="/hoc2" element={<PrivateComponent userRole="user" />} />
           <Route path="/hoc3" element={<LoginComponent />} />
+          <Route path="/hoc4" element={<PostComponent />} />
         </Route>
       </Routes>
     </div>
