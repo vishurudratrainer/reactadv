@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const performLogin = (e) => {
     e.preventDefault();
     if (username.length > 0 && username === password) {
+      props.setToken(true);
       navigate("/counter");
     }
   };
@@ -24,7 +25,7 @@ export default function Login() {
           Enter password{" "}
           <input type="password" required onChange={capturePassword} />
         </label>
-        <br/>
+        <br />
         <button>Login</button>
       </form>
     </div>
