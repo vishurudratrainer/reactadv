@@ -29,6 +29,8 @@ RestApiInstance.interceptors.request.use(request => {
 RestApiInstance.interceptors.response.use(response => {
   //request.headers['Authorization'] = 'Bearer token'; // Add authorization header
   console.log('Inside response intercepot of axios',response)
+   let stringfied = JSON.stringify(response.data)
+    response.data= JSON.parse(stringfied.toUpperCase())
   return response;
 }, error => {
     console.log("Error inside response",error)
