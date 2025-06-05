@@ -13,7 +13,7 @@ export default function Profile() {
       <button onClick={openModel}>View More</button>
       {model && (
         <Modal>
-          <h1>This is the info u wanted</h1>
+          <h1>This is the info u wanted {model.toString()}</h1>
           <button onClick={closeModel}>Close Modal</button>
         </Modal>
       )}
