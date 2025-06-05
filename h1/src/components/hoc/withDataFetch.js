@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-
+import { useErrorBoundary } from "react-error-boundary";
 export default function withDataFetch(WrappedComponent, fetchData) {
   return function (props) {
-    const [data, setData] = useState(null);
+    const { showBoundary } = useErrorBoundary();
+
+    const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -13,9 +15,10 @@ export default function withDataFetch(WrappedComponent, fetchData) {
             const data = await fetchData(props);
             setData(data);
             setIsLoading(false);
-          },5000);
+          }, 5000);
         } catch (error) {
           setError(error);
+          showBoundary(error);
           setIsLoading(false);
         }
       };

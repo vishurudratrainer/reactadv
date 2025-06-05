@@ -11,6 +11,7 @@ import InputComponent from "./components/InputComponent";
 import PrivateComponent from "./components/PrivateComponent";
 import LoginComponent from "./components/LoginComponent";
 import PostComponent from "./components/PostComponent";
+import TodosFetch1 from "./components/TodosFetch1";
 
 export default function Nav(props) {
   return (
@@ -37,6 +38,8 @@ export default function Nav(props) {
           <br />
           <Link to={"/hoc4"}>HOC Hover4</Link>
           <br />
+          <Link to={"/hoc5"}>HOC Hover5</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -52,6 +55,7 @@ export default function Nav(props) {
           <Route path="/hoc2" element={<PrivateComponent userRole="user" />} />
           <Route path="/hoc3" element={<LoginComponent />} />
           <Route path="/hoc4" element={<PostComponent />} />
+          <Route path="/hoc5" element={<TodosFetch1 />} />
         </Route>
       </Routes>
     </div>

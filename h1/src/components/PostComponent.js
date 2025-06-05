@@ -1,4 +1,4 @@
-import withDataFetch from "./withDataFetch";
+import withDataFetch from "./hoc/withDataFetch";
 
 const fetchPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");

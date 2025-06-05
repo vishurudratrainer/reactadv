@@ -1,4 +1,4 @@
-import withTranslation from "./withTranslation";
+import withTranslation from "./hoc/withTranslation";
 
 const LoginComponent = ({ t, language, changeLanguage }) => {
   return (

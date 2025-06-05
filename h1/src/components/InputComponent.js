@@ -1,4 +1,4 @@
-import withHover from "./withHover";
+import withHover from "./hoc/withHover";
 
 const InputComponent = ({ type, isHovered }) => {
   return (
