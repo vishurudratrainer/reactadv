@@ -27,7 +27,7 @@ export default function Todos() {
         let dataToShow = response.data;
         setColumns(getColumns(dataToShow[0]));
         setTodos(dataToShow);
-      }).catch(error =>{showBoundary()});
+      }).catch(error =>{showBoundary(error)});
 
   return (
     <div>
