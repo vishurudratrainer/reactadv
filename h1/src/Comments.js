@@ -14,9 +14,9 @@ export default function Comments() {
   };
 
   const fetchComments = () =>
-    fetch("https://jsonplaceholder.typicode.com/comments/")
-      .then((res) => res.json())
-      .then((res) => {
+    axios.get("https://jsonplaceholder.typicode.com/comments/")
+      .then((response) => {
+        let res =response.data
         setColumns(getColumns(res[0]));
         setComments(res);
       });

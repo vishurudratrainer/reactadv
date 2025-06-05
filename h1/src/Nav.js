@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Counter from "./Counter";
 import Todos from "./Todos";
 import Comments from "./Comments";
+import Login from "./Login";
 
 export default function Nav() {
   return (
@@ -12,7 +13,8 @@ export default function Nav() {
       <br />
       <Link to={"/comments"}>Comments</Link>
       <Routes>
-        <Route path="/" element={<Counter />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="/todos" element={<Todos />} />
         <Route path="/comments" element={<Comments />} />
       </Routes>
