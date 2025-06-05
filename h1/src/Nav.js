@@ -7,6 +7,7 @@ import PrivateRoutes from "./components/PrivateRoute";
 import TodosSingle from "./components/TodosSingle";
 import TodosInput from "./components/TodosInput";
 import PostForm from "./components/PostForm";
+import InputComponent from "./components/InputComponent";
 
 export default function Nav(props) {
   return (
@@ -25,6 +26,8 @@ export default function Nav(props) {
           <br />
           <Link to={"/postform"}>Post Form</Link>
           <br />
+          <Link to={"/hoc1"}>HOC Hover1</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -36,6 +39,7 @@ export default function Nav(props) {
           <Route path="/todosbyid/:id" element={<TodosSingle />} />
           <Route path="/todosInput" element={<TodosInput />} />
           <Route path="/postform" element={<PostForm />} />
+          <Route path="/hoc1" element={<InputComponent />} />
         </Route>
       </Routes>
     </div>
