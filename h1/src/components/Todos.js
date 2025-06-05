@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DynamicTable from "./DynamicTable";
-import axios from "axios";
+import RestApiInstance from "../resthelper/RestApiInstance";
 
 export default function Todos() {
   const [todos, setTodos] = useState([]);
@@ -20,8 +20,8 @@ export default function Todos() {
         setColumns(getColumns(res[0]));
         setTodos(res);
       }); */
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos/")
+    RestApiInstance
+      .get("todos/")
       .then((response) => {
         let dataToShow = response.data;
         setColumns(getColumns(dataToShow[0]));
