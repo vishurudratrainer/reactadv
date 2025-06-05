@@ -1,8 +1,9 @@
 import { useState } from "react";
 import DynamicTable from "./DynamicTable";
 import RestApiInstance from "../resthelper/RestApiInstance";
-
+import { useErrorBoundary } from "react-error-boundary";
 export default function Todos() {
+  const {showBoundary}=useErrorBoundary()
   const [todos, setTodos] = useState([]);
   const [columns, setColumns] = useState([]);
   const getColumns = (data) => {
@@ -21,12 +22,12 @@ export default function Todos() {
         setTodos(res);
       }); */
     RestApiInstance
-      .get("todos/")
+      .get("//todos/")
       .then((response) => {
         let dataToShow = response.data;
         setColumns(getColumns(dataToShow[0]));
         setTodos(dataToShow);
-      });
+      }).catch(error =>{showBoundary()});
 
   return (
     <div>

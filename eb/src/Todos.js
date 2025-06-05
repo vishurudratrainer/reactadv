@@ -5,7 +5,7 @@ const Todos = () => {
   const { showBoundary } = useErrorBoundary();
   const fetchTodos = () => {
     try {
-      fetch("https://jsonplaceholder1.typicode.com/todos/")
+      fetch("https://jsonplaceholder.typicode.com/todos/")
         .then((data) => data.json())
         .then((data) => setTodos(data))
         .catch((error) => showBoundary(error));
@@ -17,7 +17,7 @@ const Todos = () => {
   return (
     <div>
       <button onClick={fetchTodos}>Fetch Todos</button>
-      <p>{JSON.stringify(todos)}</p>
+      <p>{(todos)}</p>
     </div>
   );
 };

@@ -14,7 +14,8 @@ axios.interceptors.request.use(request => {
 const RestApiInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
   timeout: 10000 // Set timeout for requests
- // headers: { 'Authorization': 'Bearer token' }
+ // headers: { 'Authorization': 'Bearer token' },
+ 
 });
 
 RestApiInstance.interceptors.request.use(request => {
