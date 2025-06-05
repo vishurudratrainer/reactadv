@@ -18,8 +18,8 @@ export default function Nav(props) {
         </div>
       )}
       <Routes>
-        <Route path="/" element={<Login setToken={props.setToken} />} />
-        <Route element={<PrivateRoutes token={props.token} />}>
+        <Route path="/" element={<Login  />} />
+        <Route element={<PrivateRoutes />}>
           <Route path="/counter" element={<Counter />} />
           <Route path="/todos" element={<Todos />} />
           <Route path="/comments" element={<Comments />} />
