@@ -1,9 +1,9 @@
 import { Routes, Route, Link } from "react-router-dom";
-import Counter from "./Counter";
-import Todos from "./Todos";
-import Comments from "./Comments";
-import Login from "./Login";
-import PrivateRoutes from "./PrivateRoute";
+import Counter from "./components/Counter";
+import Todos from "./components/Todos";
+import Comments from "./components/Comments";
+import Login from "./components/Login";
+import PrivateRoutes from "./components/PrivateRoute";
 
 export default function Nav(props) {
   return (

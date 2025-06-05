@@ -1,8 +1,8 @@
 import "./App.css";
 import Nav from "./Nav";
 import { useState } from "react";
-import AuthContext from "./AuthContext";
-import UserContext from "./UserContext";
+import AuthContext from "./context/AuthContext";
+import UserContext from "./context/UserContext";
 function App() {
   const [token, setToken] = useState(false);
   const [user, setUser] = useState("");

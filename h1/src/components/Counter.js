@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import UserContext from "./UserContext";
+import UserContext from "../context/UserContext";
 
 export default function Counter(){
     const userContext=useContext(UserContext)
