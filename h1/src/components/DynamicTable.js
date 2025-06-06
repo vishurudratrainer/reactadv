@@ -6,7 +6,7 @@ export default function DynamicTable(props) {
   let data = props.data;
   return (
     <div>
-      <table border={1}>
+      <table id="table1" border={1}>
         <tr>
           {props.columns.map((column) => (
             <th>{column}</th>

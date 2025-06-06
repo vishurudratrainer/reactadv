@@ -27,7 +27,7 @@ export default function TodosSingle() {
   return (
     <div>
       <h1>Todos fetch example{id}</h1>
-      <button onClick={fetchTodos}>Fetch Todos</button>
+      <button id="fetchtodosSingle" onClick={fetchTodos}>Fetch Todos</button>
       <DynamicTable data={todos} columns={columns} />
     </div>
   );

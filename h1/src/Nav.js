@@ -18,13 +18,13 @@ export default function Nav(props) {
     <div>
       {props.token && (
         <div>
-          <Link to={"/"}>Home</Link>
+          <Link id="homelink" to={"/"}>Home</Link>
           <br />
-          <Link to={"/todos"}>Todos</Link>
+          <Link  id="todoslink" to={"/todos"}>Todos</Link>
           <br />
-          <Link to={"/comments"}>Comments</Link>
+          <Link  id="commentslink" to={"/comments"}>Comments</Link>
           <br />
-          <Link to={"/todosbyid/23"}>Todos By Id</Link>
+          <Link id="todosbyidlink" to={"/todosbyid/23"}>Todos By Id</Link>
           <br />
           <Link to={"/todosInput"}>Todos Input</Link>
           <br />
