@@ -28,7 +28,7 @@ export default function Nav(props) {
           <br />
           <Link to={"/todosInput"}>Todos Input</Link>
           <br />
-          <Link to={"/postform"}>Post Form</Link>
+          <Link to={"/postform"} id="postformLink">Post Form</Link>
           <br />
           <Link to={"/hoc1"}>HOC Hover1</Link>
           <br />

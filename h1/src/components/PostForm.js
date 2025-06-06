@@ -19,20 +19,20 @@ export default function PostForm() {
     <div>
       <form onSubmit={handlePost}>
         <label>
-          Enter title <input name="title" onChange={captureInput} />
+          Enter title <input name="title"id="title" onChange={captureInput} />
         </label>
         <br />
         <label>
-          Enter body <input name="body" onChange={captureInput} />
+          Enter body <input name="body" id="body" onChange={captureInput} />
         </label>
         <br />
         <label>
-          Enter userId <input name="userId" onChange={captureInput} />
+          Enter userId <input name="userId" id="userId" onChange={captureInput} />
         </label>
         <br />
-        <button type="submit">Send</button>
+        <button id="send" type="submit">Send</button>
       </form>
-      <h1>{JSON.stringify(res)}</h1>
+      <h1 id="result">{JSON.stringify(res)}</h1>
     </div>
   );
 }
