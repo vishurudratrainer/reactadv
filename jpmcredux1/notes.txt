@@ -1,0 +1,13 @@
+redux
+
+
+3rd party framework
+
+Redux----state management
+          action object---type,data:{}
+UI -----dispatch(action)----->Series of middlewares------>Reducer(state)----->UI
+(Component)                   Actually perform processing    state,action
+                              Fetching data from api         decides next state
+                               [thunk,sagas]
+
+
