@@ -5,12 +5,16 @@ import {
   FETCH_TODOS_ID,
   FETCHED_TODOS,
   FETCHED_TODOS_ERROR,
+  FETCH_DOG,
+  FETCHED_DOG,
+  FETCHED_DOG_ERROR,
 } from "../ActionType";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
   yield takeLatest(FETCH_TODOS, todoFetcherSaga);
   yield takeLatest(FETCH_TODOS_ID, todoIdFetcherSaga);
+  yield takeLatest(FETCH_DOG, dogFetcherSaga);
 }
 
 function fetchTodo(todoId = "") {
@@ -18,6 +22,14 @@ function fetchTodo(todoId = "") {
   if (todoId !== "") {
     url = url + "/" + todoId;
   }
+  return axios({
+    method: "get",
+    url: url,
+  });
+}
+
+function fetchDog() {
+  let url = "https://dog.ceo/api/breeds/image/random";
   return axios({
     method: "get",
     url: url,
@@ -39,6 +51,20 @@ function* todoFetcherSaga() {
   }
 }
 
+function* dogFetcherSaga() {
+  try {
+    const response = yield call(fetchDog);
+    //call method is used for async calls
+    const data = response.data.message;
+
+    // dispatch a success action to the store with the new dog
+    yield put({ type: FETCHED_DOG, dog: data });
+  } catch (error) {
+    // dispatch a failure action to the store with the error
+    yield put({ type: FETCHED_DOG_ERROR, error });
+  }
+}
+
 // worker saga: makes the api call when watcher saga sees the action
 function* todoIdFetcherSaga(action) {
   try {
@@ -47,7 +73,7 @@ function* todoIdFetcherSaga(action) {
     const data = response.data;
 
     // dispatch a success action to the store with the new dog
-    yield put({ type: FETCHED_TODOS, data:[data] });
+    yield put({ type: FETCHED_TODOS, data: [data] });
   } catch (error) {
     // dispatch a failure action to the store with the error
     yield put({ type: FETCHED_TODOS_ERROR, error });
