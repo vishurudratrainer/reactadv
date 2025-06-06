@@ -23,15 +23,15 @@ export default function Login(props) {
     <div>
       <form onSubmit={performLogin}>
         <label>
-          Enter username <input required onChange={captureUsername} />
+          Enter username <input id="username" required onChange={captureUsername} />
         </label>
         <br />
         <label>
           Enter password{" "}
-          <input type="password" required onChange={capturePassword} />
+          <input type="password" id="password" required onChange={capturePassword} />
         </label>
         <br />
-        <button>Login</button>
+        <button id="button">Login</button>
       </form>
     </div>
   );

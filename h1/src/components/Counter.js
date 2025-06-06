@@ -11,11 +11,11 @@ export default function Counter(){
 
     return(<div>
         <h1>Welcome {userContext.user}</h1>
-        <button onClick={increment}>Increment</button>
+        <button onClick={increment} id="inc">Increment</button>
         <br/>
-        <button onClick={decrement}>Decrement</button>
+        <button onClick={decrement} id="dec">Decrement</button>
 
-        <h1>{counter}</h1>
+        <h1 id="counter">{counter}</h1>
     </div>)
 
 }
