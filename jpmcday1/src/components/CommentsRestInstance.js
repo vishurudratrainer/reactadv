@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import StaticTable from "./DynamicTable";
 import RestInstance from "../rest/RestInstance";
 const CommentsRestInstance = () => {
   const [comments, setComments] = useState([]);
@@ -14,7 +14,7 @@ const CommentsRestInstance = () => {
       <button onClick={handleFetchComments}>
         Fetch Comments using Rest Instance
       </button>
-      <h1>{JSON.stringify(comments)}</h1>
+      <StaticTable rows={comments} columns={["postId","id","name","email","body"]}/>
     </div>
   );
 };

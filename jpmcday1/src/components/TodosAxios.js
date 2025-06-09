@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import StaticTable from "./StaticTable";
+import StaticTable from "./DynamicTable";
 const TodosAxios = () => {
   const [todos, setTodos] = useState([]);
   //      data, setter------------initialData
