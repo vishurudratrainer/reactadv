@@ -3,6 +3,7 @@ import PostCreate from "./PostCreate";
 import TodosAxios from "./TodosAxios";
 import TodosFetch from "./TodosFetch";
 import TodosRestInstance from "./TodosRestInstance";
+import Transfer from "./Transfer";
 
 const Nav = () => {
   return (
@@ -15,11 +16,14 @@ const Nav = () => {
       <br />
       <Link to={"/todosret"}>Todos Rest</Link>
       <br />
+      <Link to={"/transfer"}>Transfer</Link>
+      <br />
       <Routes>
         <Route path="/" element={<PostCreate />} />
         <Route path="/todosaxios" element={<TodosAxios />} />
         <Route path="/todosfetch" element={<TodosFetch />} />
         <Route path="/todosret" element={<TodosRestInstance />} />
+        <Route path="/transfer" element={<Transfer />} />
       </Routes>
     </div>
   );
