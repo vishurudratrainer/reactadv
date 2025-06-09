@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const Login = ({setAuthenticated}) => {
-    const [username,setUsername]=useState("")
+const Login = ({setAuthenticated,setUsername,username}) => {
     const [password,setPassword]=useState("")
     const navigate=useNavigate()
 
