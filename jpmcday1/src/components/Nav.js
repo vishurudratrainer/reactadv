@@ -6,6 +6,7 @@ import TodosRestInstance from "./TodosRestInstance";
 import Transfer from "./Transfer";
 import Login from "./Login";
 import { useState } from "react";
+import PrivateComponent from "./PrivateComponent";
 const Nav = () => {
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -30,12 +31,32 @@ const Nav = () => {
           path="/"
           element={<Login setAuthenticated={setAuthenticated} />}
         />
-        <Route path="/todosaxios" element={<TodosAxios authenticated={authenticated} />} />
-        <Route path="/todosfetch" element={<TodosFetch authenticated={authenticated} />} />
-        <Route path="/todosret" element={<TodosRestInstance authenticated={authenticated} />} />
-        <Route path="/transfer" element={<Transfer authenticated={authenticated} />} />
-        <Route path="/postcreate" element={<PostCreate authenticated={authenticated} />} />
-
+        <Route
+          element={
+            <PrivateComponent authenticated={authenticated}></PrivateComponent>
+          }
+        >
+          <Route
+            path="/todosaxios"
+            element={<TodosAxios authenticated={authenticated} />}
+          />
+          <Route
+            path="/todosfetch"
+            element={<TodosFetch authenticated={authenticated} />}
+          />
+          <Route
+            path="/todosret"
+            element={<TodosRestInstance authenticated={authenticated} />}
+          />
+          <Route
+            path="/transfer"
+            element={<Transfer authenticated={authenticated} />}
+          />
+          <Route
+            path="/postcreate"
+            element={<PostCreate authenticated={authenticated} />}
+          />
+        </Route>
       </Routes>
     </div>
   );
