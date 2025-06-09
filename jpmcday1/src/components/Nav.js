@@ -6,7 +6,7 @@ import TodosRestInstance from "./TodosRestInstance";
 import Transfer from "./Transfer";
 import Login from "./Login";
 import { useState } from "react";
-import PrivateComponent from "./PrivateComponent";
+import GuardComponent from "./GuardComponent";
 const Nav = () => {
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -33,7 +33,7 @@ const Nav = () => {
         />
         <Route
           element={
-            <PrivateComponent authenticated={authenticated}></PrivateComponent>
+            <GuardComponent authenticated={authenticated}></GuardComponent>
           }
         >
           <Route
