@@ -21,15 +21,14 @@ RestInstance.interceptors.response.use(
   (response) => {
     // request.headers['Authorization'] = 'Bearer token'; // Add authorization header
     console.log("Inside response interceptor");
-    let stringified = JSON.stringify(response.data);
-    console.log(stringified)
-    response.data = (stringified.toUpperCase());
+    //  let stringified = JSON.stringify(response.data);
+    //console.log(stringified);
+    // response.data = stringified.toUpperCase();
     return response;
   },
   (error) => {
     return Promise.reject(error);
   }
 );
-
 
 export default RestInstance;

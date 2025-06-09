@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import StaticTable from "./StaticTable";
 const TodosAxios = () => {
   const [todos, setTodos] = useState([]);
   //      data, setter------------initialData
@@ -10,8 +11,8 @@ const TodosAxios = () => {
 
   return (
     <div>
-      <button onClick={handleFetchTodos}>Fetch Todos</button>
-      <h1>{JSON.stringify(todos)}</h1>
+      <button onClick={handleFetchTodos}>Fetch Todos using Axios</button>
+      <StaticTable rows={todos} columns={["id","userId","title","completed"]}/>
     </div>
   );
 };
