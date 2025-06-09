@@ -8,11 +8,13 @@ import Login from "./Login";
 import { useState } from "react";
 import GuardComponent from "./GuardComponent";
 import UserContext from "../context/UserContext";
-const Nav = () => {
+import ThemeContext from"../context/ThemeContext";
+const Nav = ({color}) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
 
   return (
+    <ThemeContext.Provider value={{color:color, isVisible:true}}>
     <UserContext.Provider value={{ username: username }}>
       <div>
         {authenticated && (
@@ -69,6 +71,7 @@ const Nav = () => {
         </Routes>
       </div>
     </UserContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 export default Nav;
