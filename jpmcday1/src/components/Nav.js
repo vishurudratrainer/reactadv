@@ -30,11 +30,11 @@ const Nav = () => {
           path="/"
           element={<Login setAuthenticated={setAuthenticated} />}
         />
-        <Route path="/todosaxios" element={<TodosAxios />} />
-        <Route path="/todosfetch" element={<TodosFetch />} />
-        <Route path="/todosret" element={<TodosRestInstance />} />
-        <Route path="/transfer" element={<Transfer />} />
-        <Route path="/postcreate" element={<PostCreate />} />
+        <Route path="/todosaxios" element={<TodosAxios authenticated={authenticated} />} />
+        <Route path="/todosfetch" element={<TodosFetch authenticated={authenticated} />} />
+        <Route path="/todosret" element={<TodosRestInstance authenticated={authenticated} />} />
+        <Route path="/transfer" element={<Transfer authenticated={authenticated} />} />
+        <Route path="/postcreate" element={<PostCreate authenticated={authenticated} />} />
 
       </Routes>
     </div>
