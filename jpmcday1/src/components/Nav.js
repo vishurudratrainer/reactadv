@@ -9,6 +9,7 @@ import { useState } from "react";
 import GuardComponent from "./GuardComponent";
 import UserContext from "../context/UserContext";
 import ThemeContext from"../context/ThemeContext";
+import LocationContext from "../context/LocationContext";
 const Nav = ({color}) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [username, setUsername] = useState("");

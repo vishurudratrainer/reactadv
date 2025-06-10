@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <LoginComponent/>
-        {/**<ModifiedTextComponent text="I am the modified one" />
+        {/**<ModifiedTextComponent text="I am the modified one" />**/}
         <TextComponent text="Hello from normal component"></TextComponent>
-        <InputComponent />**/}
+        <InputComponent />
         <NewFeatureComponent/>
-        <PrivateComponent userRole="admin" />
+        <PrivateComponent userRole="user" />
         <PostComponent />
       </header>
     </div>
