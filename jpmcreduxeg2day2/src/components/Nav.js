@@ -2,6 +2,7 @@ import { Link, Routes, Route } from "react-router-dom";
 
 import Todos from "./Todos";
 import TodoId from "./TodoId";
+import PostForm from "./PostForm";
 
 const Nav = () => {
   return (
@@ -17,6 +18,7 @@ const Nav = () => {
       <Routes>
         <Route path="/" element={<Todos />} />
         <Route path="/todosid" element={<TodoId />} />
+        <Route path="/postform" element={<PostForm />} />
       </Routes>
     </div>
   );
