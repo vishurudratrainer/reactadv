@@ -27,15 +27,16 @@ function fetchTodo(url, todoId = "") {
 }
 
 function postForm(data) {
-  return axios("https://jsonplaceholder.typicode.com/posts", {
-    body: JSON.stringify(data),
-    method: "POST",
+  return axios.post("https://jsonplaceholder.typicode.com/posts", 
+  JSON.stringify(data),{
     headers: { "Content-Type": "application/json" },
   });
 }
 function loginForm(data) {
   console.log("data", data);
-  return axios.post("https://dummyjson.com/auth/login",JSON.stringify(data), {headers: { "Content-Type": "application/json" }})
+  return axios.post("https://dummyjson.com/auth/login", JSON.stringify(data), {
+    headers: { "Content-Type": "application/json" },
+  });
 }
 function* todoWorkerSaga() {
   try {

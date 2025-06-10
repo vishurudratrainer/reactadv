@@ -21,6 +21,7 @@ const Nav = () => {
       <br />
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/todos" element={<Todos />} />
         <Route path="/todosid" element={<TodoId />} />
         <Route path="/postform" element={<PostForm />} />
         <Route path="/dog" element={<Dog />} />
