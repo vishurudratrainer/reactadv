@@ -1,8 +1,10 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 import {
+  FETCH_DOG,
   FETCH_TODO,
   FETCH_TODO_ID,
+  FETCHED_DOG,
   FETCHED_TODO,
   POST_FORM,
   POST_FORM_SUCCESS,
@@ -13,12 +15,12 @@ export function* watcherSaga() {
   yield takeLatest(FETCH_TODO, todoWorkerSaga);
   yield takeLatest(FETCH_TODO_ID, todoWorkerByIdSaga);
   yield takeLatest(POST_FORM, postFormWorkerSaga);
+  yield takeLatest(FETCH_DOG, dogFetcherSaga);
 }
 
-function fetchTodo(todoId = "") {
-  if (todoId === "")
-    return axios.get("https://jsonplaceholder.typicode.com/todos");
-  else return axios.get("https://jsonplaceholder.typicode.com/todos/" + todoId);
+function fetchTodo(url, todoId = "") {
+  if (todoId === "") return axios.get(url);
+  else return axios.get(url + todoId);
 }
 
 function postForm(data) {
@@ -31,15 +33,30 @@ function postForm(data) {
 
 function* todoWorkerSaga() {
   try {
-    const response = yield call(fetchTodo);
+    const response = yield call(
+      fetchTodo,
+      "https://jsonplaceholder.typicode.com/todos"
+    );
     const data = response.data;
     yield put({ type: FETCHED_TODO, data: data });
   } catch (e) {}
 }
 
+function* dogFetcherSaga() {
+  try {
+    const response = yield call(fetchTodo,"https://dog.ceo/api/breeds/image/random");
+    const data = response.data.message;
+    yield put({ type: FETCHED_DOG, data: data });
+  } catch (e) {}
+}
+
 function* todoWorkerByIdSaga(action) {
   try {
-    const response = yield call(fetchTodo, action.todoId);
+    const response = yield call(
+      fetchTodo,
+      "https://jsonplaceholder.typicode.com/todos",
+      action.todoId
+    );
     const data = response.data;
     yield put({ type: FETCHED_TODO, data: data });
   } catch (e) {}
