@@ -5,13 +5,14 @@ const ApiMiddleware =
   (next) =>
   (action) => {
     if (action) {
+      console.log("Inside Api Middleware");
       if (action.type === FETCH_TODO) {
         fetch("https://jsonplaceholder.typicode.com/todos/")
           .then((data) => data.json())
           .then((data) => dispatch({ type: FETCHED_TODO, data: data }));
       }
     }
-    next(action)
+    next(action);
   };
 
-  export default ApiMiddleware
+export default ApiMiddleware;
