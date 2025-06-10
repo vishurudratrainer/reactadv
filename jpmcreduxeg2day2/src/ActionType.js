@@ -12,3 +12,7 @@ export const CAPTURE_FORM = "CAPTURE_FORM"
 export const FETCH_DOG="FETCH_DOG"
 export const FETCHED_DOG="FETCHED_DOG"
 
+
+export const LOGIN="LOGIN"
+export const LOGIN_SUCCESS="LOGIN_SUCCESS"
+export const CAPTURE_LOGIN = "CAPTURE_LOGIN"

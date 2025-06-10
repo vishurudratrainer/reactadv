@@ -4,6 +4,7 @@ import TodosReducer from "./reducers/TodosReducer";
 import { watcherSaga } from "./middlewares/ApiMiddleware";
 import PostReducer from "./reducers/PostReducer";
 import DogReducer from "./reducers/DogReducer";
+import LogReducer from "./reducers/LogReducer";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = legacy_createStore(
@@ -11,6 +12,7 @@ const store = legacy_createStore(
     todos: TodosReducer,
     postForm: PostReducer,
     dog: DogReducer,
+    login: LogReducer,
   }),
   applyMiddleware(sagaMiddleware)
 );
