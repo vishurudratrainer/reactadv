@@ -1,15 +1,12 @@
 import "./App.css";
-import Counter from "./components/Counter";
-import TodoId from "./components/TodoId";
-import Todos from "./components/Todos";
+import Nav from "./components/Nav";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoId/>
-        <Todos/>
-        <Counter />
+        <Nav/>
       </header>
     </div>
   );
