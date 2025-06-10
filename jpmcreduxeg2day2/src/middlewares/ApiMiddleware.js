@@ -35,7 +35,7 @@ function postForm(data) {
 }
 function loginForm(data) {
   console.log("data", data);
-  return axios.post("https://dummyjson.com/auth/login",JSON.stringify(data))
+  return axios.post("https://dummyjson.com/auth/login",JSON.stringify(data), {headers: { "Content-Type": "application/json" }})
 }
 function* todoWorkerSaga() {
   try {
