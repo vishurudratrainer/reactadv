@@ -1,11 +1,12 @@
-import './App.css';
-import PostForm from './PostForm';
-import Todos from './Todos';
+import "./App.css";
+import PostForm from "./PostForm";
+import Todos from "./Todos";
 
 function App() {
   return (
     <div className="App">
-        <PostForm/>
+      <Todos />
+      <PostForm />
     </div>
   );
 }

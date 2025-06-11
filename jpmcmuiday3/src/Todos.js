@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import Alert from "@mui/material/Alert";
+import CustomGrid from "./CustomGrid";
 
 export default function Todos() {
   const [todos, setTodos] = useState([]);
@@ -14,7 +14,15 @@ export default function Todos() {
       <Button variant="contained" onClick={fetchTodos}>
         Fetch Todos
       </Button>
-      <Alert severity="success">{JSON.stringify(todos)} </Alert>
+      <CustomGrid
+        rows={todos}
+        columns={[
+          { field: "id", headerName: "Todo Id", width: 200 },
+          { field: "title", headerName: "Title", flex:1 },
+          { field: "completed", headerName: "Completed", width: 200 },
+          { field: "userId", headerName: "UserId", width: 200 },
+        ]}
+      />
     </div>
   );
 }
