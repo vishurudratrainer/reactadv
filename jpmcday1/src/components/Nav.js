@@ -28,7 +28,7 @@ const Nav = ({color}) => {
             <br />
             <Link to={"/todosret"}>Todos Rest</Link>
             <br />
-            <Link to={"/transfer"}>Transfer</Link>
+            <Link to={"/transfer"} id="transfer">Transfer</Link>
             <br />
           </div>
         )}

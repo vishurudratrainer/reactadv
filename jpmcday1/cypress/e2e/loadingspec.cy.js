@@ -9,5 +9,8 @@ describe("test whether app is loading", () => {
     cy.get(
       "#root > div > header > div > div:nth-child(2) > table > tr:nth-child(2) > td:nth-child(3)"
     ).contains("delectus aut autem");
+    cy.get("#transfer").click();
+    cy.wait(500)
+    cy.get("#goTo").click();
   });
 });

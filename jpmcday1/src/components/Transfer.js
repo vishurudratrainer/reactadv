@@ -7,7 +7,7 @@ const Transfer=()=>{
             navigate("/todosfetch")
     }
     
-    return(<div><button onClick={goTo}>Go to component</button></div>)
+    return(<div><button id="goTo" onClick={goTo}>Go to component</button></div>)
 }
 
 export default Transfer
