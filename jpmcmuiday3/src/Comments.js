@@ -1,16 +1,26 @@
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import CustomGrid from "./CustomGrid";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(false);
   const fetchComments = () => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
-      .then((data) => data.json())
-      .then((data) => setComments(data));
+    setLoading(true);
+    setTimeout(() => {
+      fetch("https://jsonplaceholder.typicode.com/comments")
+        .then((data) => data.json())
+        .then((data) => {
+          setComments(data);
+          setLoading(false);
+        });
+    }, 5000);
   };
   return (
     <div>
+      {loading && <CircularProgress />}
+
       <Button variant="contained" onClick={fetchComments}>
         Fetch Comments
       </Button>
