@@ -1,12 +1,11 @@
 import './App.css';
+import PostForm from './PostForm';
 import Todos from './Todos';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <Todos/>
-      </header>
+        <PostForm/>
     </div>
   );
 }

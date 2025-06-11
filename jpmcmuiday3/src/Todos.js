@@ -5,11 +5,15 @@ import Alert from "@mui/material/Alert";
 export default function Todos() {
   const [todos, setTodos] = useState([]);
   const fetchTodos = () => {
-    fetch("https://jsonplaceholder.typicode.com/todos").then(data=>data.json()).then(data=>setTodos(data))
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((data) => data.json())
+      .then((data) => setTodos(data));
   };
   return (
     <div>
-      <Button variant="contained" onClick={fetchTodos}>Fetch Todos</Button>
+      <Button variant="contained" onClick={fetchTodos}>
+        Fetch Todos
+      </Button>
       <Alert severity="success">{JSON.stringify(todos)} </Alert>
     </div>
   );
