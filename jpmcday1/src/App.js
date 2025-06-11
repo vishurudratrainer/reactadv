@@ -9,11 +9,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <label>
-          Enter color <input onChange={captureColor} />
+          Enter color <input id="color1" onChange={captureColor} />
         </label>
         <br />
         <label>
-          Enter color <input onChange={captureColor} />
+          Enter color <input id="color2" onChange={captureColor} />
         </label>
         <br />
         <Nav color={color} />

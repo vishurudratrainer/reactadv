@@ -21,14 +21,14 @@ const Login = ({setAuthenticated,setUsername,username}) => {
     <div>
       <form onSubmit={handleLogin}>
         <label>
-          Enter username <input onChange={captureUsername} />
+          Enter username <input id="username" onChange={captureUsername} />
         </label>
         <br />
         <label>
-          Enter password <input type="password" onChange={capturePassword}/>
+          Enter password <input id="password" type="password" onChange={capturePassword}/>
         </label>
         <br />
-        <button>Login</button>
+        <button id="login">Login</button>
       </form>
     </div>
   );

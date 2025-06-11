@@ -20,11 +20,11 @@ const Nav = ({color}) => {
       <div>
         {authenticated && (
           <div>
-            <Link to={"/"}>Home Page</Link>
+            <Link to={"/"} id="homePageLink">Home Page</Link>
             <br />
-            <Link to={"/todosaxios"}>Todos Axios</Link>
+            <Link to={"/todosaxios"}id="todosaxioslink">Todos Axios</Link>
             <br />
-            <Link to={"/todosfetch"}>Todos Fetch</Link>
+            <Link to={"/todosfetch"} id="todosfetchlink">Todos Fetch</Link>
             <br />
             <Link to={"/todosret"}>Todos Rest</Link>
             <br />
