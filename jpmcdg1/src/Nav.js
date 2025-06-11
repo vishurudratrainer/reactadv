@@ -1,12 +1,20 @@
-import { Routes,Route,Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import Todos from "./Todos";
-const Nav =()=>{
-    return(<div>
-        <Routes>
-            <Route path="/" element={<Todos/>}/>
-        </Routes>
-    </div>)
-}
+import Comments from "./Comments";
+const Nav = () => {
+  return (
+    <div>
+      <Link to={"/"}>Todos</Link>
+      <br />
+      <Link to={"/comments"}>Comments</Link>
+      <br />
+      <Routes>
+        <Route path="/" element={<Todos />} />
+        <Route path="/comments" element={<Comments />} />
+      </Routes>
+    </div>
+  );
+};
 
-export default Nav
+export default Nav;
