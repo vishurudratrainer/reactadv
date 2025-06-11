@@ -1,13 +1,16 @@
-import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
+import { AgGridReact } from "ag-grid-react"; // React Data Grid Component
 
+const CustomGrid = ({ columns, data }) => {
+  return (
+    <div style={{ height: 500 }}>
+      <AgGridReact
+        rowData={data}
+        columnDefs={columns}
+        pagination={true}
+        defaultColDef={{ filter: true }}
+      />
+    </div>
+  );
+};
 
-const CustomGrid = ({columns,data})=>{
-    return(  <div style={{ height: 500 }}>
-        <AgGridReact
-            rowData={data}
-            columnDefs={columns}
-        />
-    </div>)
-}
-
-export default CustomGrid
+export default CustomGrid;
