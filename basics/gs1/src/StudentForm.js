@@ -5,6 +5,18 @@ import StudentTableRecent from "./StudentTableRecent";
 export default function StudentForm() {
   const [formData, setFormData] = useState({ name: "", age: 0, address: "" });
   const [students, setStudents] = useState([]);
+  const deleteByName = e=>{
+    let nameToDelete = e.target.name
+    let dataAfterDelete= []
+    students.forEach(element => {
+        if(element.name!==nameToDelete){
+            dataAfterDelete.push(element)
+        }
+    })
+
+    setStudents(dataAfterDelete)
+
+  }
 
   const captureName = (e) => setFormData({ ...formData, name: e.target.value });
   const captureAge = (e) => setFormData({ ...formData, age: e.target.value });
@@ -33,7 +45,7 @@ export default function StudentForm() {
         <br />
         <button>Add Student</button>
       </form>
-      <StudentTable studentData={students} pageName="Student Table" />
+      <StudentTable studentData={students} pageName="Student Table" deleteByName={deleteByName}/>
       <StudentTableRecent studentData={students} pageName="Student Table New" />
     </div>
   );
