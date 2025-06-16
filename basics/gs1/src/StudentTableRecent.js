@@ -1,4 +1,4 @@
-export default function StudentTableRecent({studentData,pageName}) {
+export default function StudentTableRecent({studentData,pageName,duplicateByName}) {
   if (studentData.length === 0) {
     return <div>No data</div>;
   } else {
@@ -12,6 +12,7 @@ export default function StudentTableRecent({studentData,pageName}) {
               <th>Name</th>
               <th>Age</th>
               <th>Address</th>
+              <th>Duplicate</th>
             </tr>
           </thead>
           <tbody>
@@ -20,6 +21,7 @@ export default function StudentTableRecent({studentData,pageName}) {
                 <td>{row.name}</td>
                 <td>{row.age}</td>
                 <td>{row.address}</td>
+                <td><button name={row.name} onClick={duplicateByName}>Duplicate</button></td>
               </tr>
             ))}
           </tbody>

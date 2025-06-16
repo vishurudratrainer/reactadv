@@ -61,7 +61,11 @@ export default function StudentForm() {
         deleteByName={deleteByName}
         duplicateByName={duplicateByName}
       />
-      <StudentTableRecent studentData={students} pageName="Student Table New" />
+      <StudentTableRecent
+        studentData={students}
+        pageName="Student Table New"
+        duplicateByName={duplicateByName}
+      />
     </div>
   );
 }
