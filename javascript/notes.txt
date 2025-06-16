@@ -1,0 +1,9 @@
+Javascript --2015/16 --ES5/ES6
+
+1) Support for OOP
+2)Support for arrow functions
+
+Pure function:
+1) function should take arguments
+2) function should return result
+3)function should not modify paramters
