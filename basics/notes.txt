@@ -52,3 +52,24 @@ JSX --Javascript with XML(HTML)
        <submit>
        <reset>
            </form>
+
+
+           React --data is fetched from API
+
+           API --Rest service --Web service
+
+           API gives data in JSON
+
+           JSON --Java script object notation
+           {}
+
+           Javascript--fetch method
+
+           fetch("url")
+           .then(res=>res.json())
+           .then(res=>setState()
+           )
+
+
+           axios ---3 rd party library --fetch
+           axios.get(url).then(res=>res.data).then(res=>setState())
