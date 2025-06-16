@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StudentTable from "./StudentTable";
+import StudentTableRecent from "./StudentTableRecent";
 
 export default function StudentForm() {
   const [formData, setFormData] = useState({ name: "", age: 0, address: "" });
@@ -11,7 +12,7 @@ export default function StudentForm() {
     setFormData({ ...formData, address: e.target.value });
 
   const handleAdd = (e) => {
-    e.preventDefault();//prevent default form behaviour of sending the data to action
+    e.preventDefault(); //prevent default form behaviour of sending the data to action
     setStudents(students.concat(formData));
   };
 
@@ -32,8 +33,8 @@ export default function StudentForm() {
         <br />
         <button>Add Student</button>
       </form>
-      <StudentTable studentData ={students} pageName="Student Table"/>
-
+      <StudentTable studentData={students} pageName="Student Table" />
+      <StudentTableRecent studentData={students} pageName="Student Table New" />
     </div>
   );
 }
