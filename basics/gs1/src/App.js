@@ -12,10 +12,15 @@ function App() {
       <header className="App-header">
         <input type="checkbox" checked={showCalc} onClick={changeShowCalc} />
         Cal Visible
-        <SelectColor />
-        <StudentForm />
-        {showCalc && <Calculator />}
-        <Counter />
+        {showCalc && (
+          <div>
+            {" "}
+            <SelectColor />
+            <StudentForm />
+            <Calculator />
+            <Counter />
+          </div>
+        )}
       </header>
     </div>
   );
