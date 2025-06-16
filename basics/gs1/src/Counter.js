@@ -9,6 +9,11 @@ const Counter = () => {
     setAction("INCREMENT");
   };
 
+  const incrementBy2 = () => {
+    setCounter(counter + 2);
+    setAction("INCREMENTBY2");
+  };
+
   const decrement = () => {
     setCounter(counter - 1);
     setAction("DECREMENT");
@@ -20,6 +25,7 @@ const Counter = () => {
         Counter {counter} Action :{action}
       </h1>
       <button onClick={increment}>INCREMENT</button>
+      <button onClick={incrementBy2}>INCREMENT BY 2</button>
       <button onClick={decrement}>DECREMENT</button>
     </div>
   );
