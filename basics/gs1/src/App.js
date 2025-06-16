@@ -1,11 +1,13 @@
 import "./App.css";
 import Calculator from "./Calculator";
 import Counter from "./Counter";
+import StudentForm from "./StudentForm";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <StudentForm/>
         <Calculator/>
         <Counter />
       </header>
