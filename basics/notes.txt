@@ -1,0 +1,40 @@
+REACT is a Javascript/Typescript based UI
+REACT ---SPA
+Single page application
+
+UI technologies ---server based
+
+JSP<JSF
+
+Client ===> request ---server ---entire page---send page
+
+REACT
+
+Content ---Javascript browsers ----> data from server
+
+REACT --->
+stable.backword compatible
+Virtual DOM
+
+
+Browsers --->DOM
+
+Virtual DOM ---> check screen changing --->DOM
+
+Virtual DOM ---->[state]
+
+React hold data --->state variables 
+
+
+React component based architecture
+
+
+UI ----Reusable UI (component)
+
+component --part of screen
+
+Root Element
+SubComp
+
+subsub
+
