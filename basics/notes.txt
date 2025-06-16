@@ -39,3 +39,7 @@ SubComp
 subsub
 
 JSX --Javascript with XML(HTML)
+
+    const [counter,setCounter]=useState(0)
+
+           data,function set data=      initial value
