@@ -13,6 +13,7 @@ export default function StudentTable(props) {
               <th>Age</th>
               <th>Address</th>
               <th>Delete</th>
+              <th>Duplicate</th>
             </tr>
           </thead>
           <tbody>
@@ -21,7 +22,16 @@ export default function StudentTable(props) {
                 <td>{row.name}</td>
                 <td>{row.age}</td>
                 <td>{row.address}</td>
-                <td><button name={row.name} onClick={props.deleteByName}>Delete</button></td>
+                <td>
+                  <button name={row.name} onClick={props.deleteByName}>
+                    Delete
+                  </button>
+                </td>
+                <td>
+                  <button name={row.name} onClick={props.duplicateByName}>
+                    Duplicate
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

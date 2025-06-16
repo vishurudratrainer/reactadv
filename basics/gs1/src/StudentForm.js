@@ -5,18 +5,28 @@ import StudentTableRecent from "./StudentTableRecent";
 export default function StudentForm() {
   const [formData, setFormData] = useState({ name: "", age: 0, address: "" });
   const [students, setStudents] = useState([]);
-  const deleteByName = e=>{
-    let nameToDelete = e.target.name
-    let dataAfterDelete= []
-    students.forEach(element => {
-        if(element.name!==nameToDelete){
-            dataAfterDelete.push(element)
-        }
-    })
+  const deleteByName = (e) => {
+    let nameToDelete = e.target.name;
+    let dataAfterDelete = [];
+    students.forEach((element) => {
+      if (element.name !== nameToDelete) {
+        dataAfterDelete.push(element);
+      }
+    });
 
-    setStudents(dataAfterDelete)
+    setStudents(dataAfterDelete);
+  };
 
-  }
+  const duplicateByName = (e) => {
+    let nameToDelete = e.target.name;
+    let dataToInsert = null;
+    students.forEach((element) => {
+      if (element.name === nameToDelete) {
+        dataToInsert = element;
+      }
+    });
+    if (dataToInsert != null) setStudents(students.concat(dataToInsert));
+  };
 
   const captureName = (e) => setFormData({ ...formData, name: e.target.value });
   const captureAge = (e) => setFormData({ ...formData, age: e.target.value });
@@ -45,7 +55,12 @@ export default function StudentForm() {
         <br />
         <button>Add Student</button>
       </form>
-      <StudentTable studentData={students} pageName="Student Table" deleteByName={deleteByName}/>
+      <StudentTable
+        studentData={students}
+        pageName="Student Table"
+        deleteByName={deleteByName}
+        duplicateByName={duplicateByName}
+      />
       <StudentTableRecent studentData={students} pageName="Student Table New" />
     </div>
   );
