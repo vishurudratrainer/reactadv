@@ -1,6 +1,7 @@
 import "./App.css";
 import Calculator from "./Calculator";
 import Counter from "./Counter";
+import Presentation from "./Presentation";
 import SelectColor from "./SelectColor";
 import StudentForm from "./StudentForm";
 import { useState } from "react";
@@ -12,15 +13,15 @@ function App() {
       <header className="App-header">
         <input type="checkbox" checked={showCalc} onClick={changeShowCalc} />
         Cal Visible
-        {showCalc && (
+        {/**showCalc && (
           <div>
-            {" "}
             <SelectColor />
             <StudentForm />
             <Calculator />
             <Counter />
           </div>
-        )}
+        )**/}
+        <Presentation/>
       </header>
     </div>
   );

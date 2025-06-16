@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function SelectColor() {
   const [color, setColor] = useState("");
-  const [colors,] = useState(["red", "green", "blue"]);
+  const [colors] = useState(["red", "green", "blue"]);
   const changeColor = (e) => setColor(e.target.value);
 
   return (
