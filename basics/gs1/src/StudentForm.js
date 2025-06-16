@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StudentTable from "./StudentTable";
 
 export default function StudentForm() {
   const [formData, setFormData] = useState({ name: "", age: 0, address: "" });
@@ -31,8 +32,8 @@ export default function StudentForm() {
         <br />
         <button>Add Student</button>
       </form>
+      <StudentTable studentData ={students} pageName="Student Table"/>
 
-      <h1>Students :{JSON.stringify(students)}</h1>
     </div>
   );
 }
