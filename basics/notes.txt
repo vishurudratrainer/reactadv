@@ -43,3 +43,12 @@ JSX --Javascript with XML(HTML)
     const [counter,setCounter]=useState(0)
 
            data,function set data=      initial value
+
+
+           HTML Form tag
+
+           <form action="/url">
+
+       <submit>
+       <reset>
+           </form>

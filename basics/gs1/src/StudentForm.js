@@ -10,7 +10,7 @@ export default function StudentForm() {
     setFormData({ ...formData, address: e.target.value });
 
   const handleAdd = (e) => {
-    e.preventDefault();
+    e.preventDefault();//prevent default form behaviour of sending the data to action
     setStudents(students.concat(formData));
   };
 
