@@ -1,14 +1,13 @@
 import "./App.css";
+import Calculator from "./Calculator";
 import Counter from "./Counter";
-import Image from "./Image";
-import Paragraph from "./Paragraph";
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Calculator/>
         <Counter />
-        <Image />
-        <Paragraph />
       </header>
     </div>
   );
