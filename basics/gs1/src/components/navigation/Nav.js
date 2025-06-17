@@ -3,6 +3,7 @@ import Counter from "../../Counter";
 import Presentation from "../slideshow/Presentation";
 import StudentForm from "../students/StudentForm";
 import Calculator from "../../Calculator";
+import Login from "../login/Login";
 
 export default function Nav() {
   return (
@@ -16,7 +17,8 @@ export default function Nav() {
       <Link to="/calculator">Calculator</Link>
       <br />
       <Routes>
-        <Route path="/" element={<Counter />} />
+        <Route path="/" element={<Login/>}></Route>
+        <Route path="/counter" element={<Counter />} />
         <Route path="/slide" element={<Presentation />} />
         <Route path="/student" element={<StudentForm />} />
         <Route path="/calculator" element={<Calculator />} />
