@@ -15,6 +15,7 @@ import Countries from "../rest/Countries";
 import TodosAxios from "../rest/TodosAxios";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
+  const [username,setUsername]= useState('')
   return (
     <div>
       {isUserAuth && (
@@ -46,7 +47,7 @@ export default function Nav() {
       <Routes>
         <Route
           path="/"
-          element={<Login setIsUserAuth={setIsUserAuth} />}
+          element={<Login setIsUserAuth={setIsUserAuth} setUsername={setUsername} />}
         ></Route>
         <Route element={<Guard authenticated={isUserAuth} />}>
           <Route path="/counter" element={<Counter />} />
@@ -59,7 +60,7 @@ export default function Nav() {
           <Route path="/todosmui" element={<TodosMui />}></Route>
           <Route path="/todoseffect" element={<TodosEffect />} />
           <Route path="/countries" element={<Countries />} />
-          <Route path="/todosaxios" element={<TodosAxios />} />
+          <Route path="/todosaxios" element={<TodosAxios username={username}/>} />
         </Route>
       </Routes>
     </div>

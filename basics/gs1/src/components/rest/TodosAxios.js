@@ -2,7 +2,8 @@ import { useState } from "react";
 import TodosTable from "./TodosTable";
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
-const TodosAxios = () => {
+import Profile from "../profile/Profile";
+const TodosAxios = ({username}) => {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
   const fetchTodo = () => {
@@ -16,6 +17,7 @@ const TodosAxios = () => {
   };
   return (
     <div>
+      <Profile username={username}/>
       <button onClick={fetchTodo}>FETCH TODO</button>
       <br />
       {loading && <CircularProgress />}

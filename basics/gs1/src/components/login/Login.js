@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ setIsUserAuth }) => {
+const Login = ({ setIsUserAuth,setUsername }) => {
   const [formData, setFormData] = useState({ user: "", password: "" });
 
   const navigate = useNavigate();
@@ -10,6 +10,7 @@ const Login = ({ setIsUserAuth }) => {
     e.preventDefault();
     if (formData.user === formData.password) {
       setIsUserAuth(true);
+      setUsername(formData.user)
       navigate("/counter");
     }
   };
