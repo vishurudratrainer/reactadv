@@ -13,10 +13,12 @@ import TodosMui from "../rest/TodosMui";
 import TodosEffect from "../rest/TodosEffect";
 import Countries from "../rest/Countries";
 import TodosAxios from "../rest/TodosAxios";
+import UserContext from "../../context/UserContext";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   const [username,setUsername]= useState('')
   return (
+    <UserContext.Provider value={{username:username}}>
     <div>
       {isUserAuth && (
         <div>
@@ -43,6 +45,7 @@ export default function Nav() {
           <Link to="/todosaxios">Todos Axios</Link>
           <br />
         </div>
+        
       )}
       <Routes>
         <Route
@@ -60,9 +63,10 @@ export default function Nav() {
           <Route path="/todosmui" element={<TodosMui />}></Route>
           <Route path="/todoseffect" element={<TodosEffect />} />
           <Route path="/countries" element={<Countries />} />
-          <Route path="/todosaxios" element={<TodosAxios username={username}/>} />
+          <Route path="/todosaxios" element={<TodosAxios/>} />
         </Route>
       </Routes>
     </div>
+    </UserContext.Provider>
   );
 }
