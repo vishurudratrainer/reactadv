@@ -17,6 +17,7 @@ import UserContext from "../../context/UserContext";
 import Themes from "../themes/Themes";
 import InputComponent from "../hoc/InputComponent";
 import ModifiedTextComponent from "../hoc/ModifiedTextComponent";
+import BoldComponent from "../hoc/BoldComponent";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   const [username, setUsername] = useState("");
@@ -78,7 +79,17 @@ export default function Nav() {
             <Route path="/todosaxios" element={<TodosAxios />} />
             <Route path="/themes" element={<Themes setTheme={setTheme} />} />
             <Route path="/hoc1" element={<InputComponent type="text" />} />
-            <Route path="/hoc2" element={<ModifiedTextComponent text="Hello how are u" />} />
+            <Route
+              path="/hoc2"
+              element={
+                <ModifiedTextComponent
+                  text="<p>Hello how are u</p>"
+                  Paragragh={BoldComponent
+                  
+                  }
+                />
+              }
+            />
           </Route>
         </Routes>
       </div>

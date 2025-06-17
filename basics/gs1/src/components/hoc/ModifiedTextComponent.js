@@ -1,11 +1,13 @@
 import withHover from "./withHover";
 
 // Updated Text Component without the Hover Logic
-const ModifiedTextComponent = ({ text, isHovered }) => {
+const ModifiedTextComponent = ({ text, isHovered,Paragragh }) => {
   return (
-    <>
-      <p style={{ backgroundColor: isHovered ? "blue" : "white" }}>{text}</p>
-    </>
+    <div>
+          <Paragragh></Paragragh>
+
+      <p style={{ backgroundColor: isHovered ? "#FF0000" : "#00FF00" }}>{text}</p>
+    </div>
   );
 };
 
