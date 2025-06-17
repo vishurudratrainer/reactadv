@@ -5,7 +5,7 @@ const Profile =()=>{
     const userContext = useContext(UserContext)
     console.log(userContext)
     
-    return (<div>User name:{userContext.username} </div>)}
+    return (<div style={{background:userContext.theme}}>User name:{userContext.username} </div>)}
 
 
 export default Profile
