@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodosTable from "./TodosTable";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -9,7 +10,7 @@ const Todos = () => {
   return (
     <div>
       <button onClick={fetchTodo}>FETCH TODO</button>
-      <h1>{JSON.stringify(todos)}</h1>
+      <TodosTable todos={todos}/>
     </div>
   );
 };
