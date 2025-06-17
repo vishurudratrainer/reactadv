@@ -11,6 +11,7 @@ import PostCreate from "../rest/PostCreate";
 import TodosById from "../rest/TodosById";
 import TodosMui from "../rest/TodosMui";
 import TodosEffect from "../rest/TodosEffect";
+import Countries from "../rest/Countries";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   return (
@@ -35,6 +36,8 @@ export default function Nav() {
           <br />
           <Link to="/todoseffect">Todos Effect</Link>
           <br />
+                    <Link to="/countries">Countries</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -52,6 +55,7 @@ export default function Nav() {
           <Route path="/todosbyid" element={<TodosById />}></Route>
           <Route path="/todosmui" element={<TodosMui />}></Route>
           <Route path="/todoseffect" element={<TodosEffect/>}/>
+          <Route path="/countries" element={<Countries/>}/>
         </Route>
       </Routes>
     </div>
