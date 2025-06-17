@@ -9,6 +9,7 @@ import Guard from "../login/Guard";
 import Todos from "../rest/Todos";
 import PostCreate from "../rest/PostCreate";
 import TodosById from "../rest/TodosById";
+import TodosMui from "../rest/TodosMui";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   return (
@@ -28,7 +29,9 @@ export default function Nav() {
           <Link to="/post">Posts</Link>
           <br />
           <Link to="/todosbyid">Todos By Id</Link>
-          <br/>
+          <br />
+          <Link to="/todosmui">Todos MUI</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -43,7 +46,8 @@ export default function Nav() {
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/todos" element={<Todos />}></Route>
           <Route path="/post" element={<PostCreate />}></Route>
-          <Route path="/todosbyid" element={<TodosById/>}></Route>
+          <Route path="/todosbyid" element={<TodosById />}></Route>
+          <Route path="/todosmui" element={<TodosMui />}></Route>
         </Route>
       </Routes>
     </div>
