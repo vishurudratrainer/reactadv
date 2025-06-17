@@ -2,7 +2,7 @@ import { useState } from "react";
 import Slide from "./Slide";
 
 const Presentation = () => {
-  const [slides, setSlides] = useState([
+  const [slides] = useState([
     { id: 1, header: "What is React", body: "Reactis a UI framework" },
     { id: 2, header: "What is React Middle", body: "Reactis a UI framework" },
     { id: 3, header: "What is React last", body: "Reactis a UI framework" },
