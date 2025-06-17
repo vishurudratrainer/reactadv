@@ -6,6 +6,7 @@ import Calculator from "../../Calculator";
 import Login from "../login/Login";
 import { useState } from "react";
 import Guard from "../login/Guard";
+import Todos from "../rest/Todos";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   return (
@@ -20,6 +21,8 @@ export default function Nav() {
           <br />
           <Link to="/calculator">Calculator</Link>
           <br />
+          <Link to="/todos">Todos</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -27,12 +30,13 @@ export default function Nav() {
           path="/"
           element={<Login setIsUserAuth={setIsUserAuth} />}
         ></Route>
-        <Route element={<Guard authenticated={isUserAuth}/>}>
+        <Route element={<Guard authenticated={isUserAuth} />}>
           <Route path="/counter" element={<Counter />} />
           <Route path="/slide" element={<Presentation />} />
           <Route path="/student" element={<StudentForm />} />
           <Route path="/calculator" element={<Calculator />} />
-          </Route>
+          <Route path="/todos" element={<Todos />}></Route>
+        </Route>
       </Routes>
     </div>
   );
