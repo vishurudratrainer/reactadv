@@ -5,6 +5,7 @@ import StudentForm from "../students/StudentForm";
 import Calculator from "../../Calculator";
 import Login from "../login/Login";
 import { useState } from "react";
+import Guard from "../login/Guard";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   return (
@@ -22,11 +23,16 @@ export default function Nav() {
         </div>
       )}
       <Routes>
-        <Route path="/" element={<Login setIsUserAuth={setIsUserAuth}/>}></Route>
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/slide" element={<Presentation />} />
-        <Route path="/student" element={<StudentForm />} />
-        <Route path="/calculator" element={<Calculator />} />
+        <Route
+          path="/"
+          element={<Login setIsUserAuth={setIsUserAuth} />}
+        ></Route>
+        <Route element={<Guard authenticated={isUserAuth}/>}>
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/slide" element={<Presentation />} />
+          <Route path="/student" element={<StudentForm />} />
+          <Route path="/calculator" element={<Calculator />} />
+          </Route>
       </Routes>
     </div>
   );
