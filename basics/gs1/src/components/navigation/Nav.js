@@ -15,6 +15,7 @@ import Countries from "../rest/Countries";
 import TodosAxios from "../rest/TodosAxios";
 import UserContext from "../../context/UserContext";
 import Themes from "../themes/Themes";
+import InputComponent from "../hoc/InputComponent";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   const [username, setUsername] = useState("");
@@ -49,6 +50,8 @@ export default function Nav() {
             <br />
             <Link to="/themes">Themes </Link>
             <br />
+            <Link to="/hoc1">HOC1 </Link>
+            <br />
           </div>
         )}
         <Routes>
@@ -71,6 +74,7 @@ export default function Nav() {
             <Route path="/countries" element={<Countries />} />
             <Route path="/todosaxios" element={<TodosAxios />} />
             <Route path="/themes" element={<Themes setTheme={setTheme} />} />
+            <Route path="/hoc1" element={<InputComponent type="text"/>}/>
           </Route>
         </Routes>
       </div>
