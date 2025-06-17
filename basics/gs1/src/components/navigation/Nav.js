@@ -7,6 +7,7 @@ import Login from "../login/Login";
 import { useState } from "react";
 import Guard from "../login/Guard";
 import Todos from "../rest/Todos";
+import PostCreate from "../rest/PostCreate";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   return (
@@ -23,6 +24,8 @@ export default function Nav() {
           <br />
           <Link to="/todos">Todos</Link>
           <br />
+          <Link to="/post">Posts</Link>
+          <br />
         </div>
       )}
       <Routes>
@@ -36,6 +39,7 @@ export default function Nav() {
           <Route path="/student" element={<StudentForm />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/todos" element={<Todos />}></Route>
+          <Route path="/post" element={<PostCreate />}></Route>
         </Route>
       </Routes>
     </div>
