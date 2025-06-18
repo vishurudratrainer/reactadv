@@ -70,8 +70,7 @@ export default function Nav() {
             </Link>
             <br />
             <Link to="/lazy" id="lazy">
-              Todos Axios Reducer
-            </Link>
+Lazy            </Link>
           </div>
         )}
         <Routes>
