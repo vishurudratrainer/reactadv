@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import Counter from "./Counter";
 import Todos from "./Todos";
 import TodoById from "./TodoById";
+import Comments from "./Comments";
 export default function Nav() {
   return (
     <div>
@@ -9,11 +10,14 @@ export default function Nav() {
       <br />
       <Link to="/todos">TODOS</Link>
       <br />
-      <Link to="/todosbyid">TODOS BY ID</Link>
+      <Link to="/todosbyid">TODOS BY ID</Link> <br />
+      <Link to="/comments">COMMENTS</Link>
+      <br />
       <Routes>
         <Route path="/" element={<Counter />} />
         <Route path="/todos" element={<Todos />} />
         <Route path="/todosbyid" element={<TodoById />} />
+        <Route path="/comments" element={<Comments />} />
       </Routes>
     </div>
   );
