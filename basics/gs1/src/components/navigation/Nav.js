@@ -60,7 +60,7 @@ export default function Nav() {
             <br />
             <Link to="/todosreducer">Todos Reducer</Link>
             <br/>
-            <Link to="/todosAxiosReducer">Todos Axios Reducer</Link>
+            <Link to="/todosAxiosReducer" id="todosAxiosReducer">Todos Axios Reducer</Link>
           </div>
         )}
         <Routes>

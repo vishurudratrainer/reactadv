@@ -37,5 +37,27 @@ describe("Test to see app is working spec", () => {
     cy.get(
       "#root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td:nth-child(1)"
     ).contains("Raaju");
+        cy.get(
+      "#root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td:nth-child(2)"
+    ).contains("20");
+  });
+
+
+   it("test to see axios with reducer form", () => {
+    cy.visit("http://localhost:3000");
+    cy.get("#root > div > div > div > form > label:nth-child(1) > input").type(
+      "sa"
+    );
+    cy.get(
+      "#root > div > div > div > form > label:nth-child(3) > input[type=password]"
+    ).type("sa");
+    cy.get("#root > div > div > div > form > button").click();
+    cy.url().should("include", "counter");
+    cy.get("#todosAxiosReducer").click();
+    cy.get("#todoId").type(22)
+    cy.get("#fetchtodo").click()
+    cy.wait(1000)
+    cy.get("#output").contains("distinctio")
+  
   });
 });

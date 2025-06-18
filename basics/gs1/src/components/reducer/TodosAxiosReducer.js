@@ -45,10 +45,12 @@ const TodosAxiosReducer = () => {
   return (
     <div>
       <label>
-        Enter todoId <input onChange={captureTodo} />
+        Enter todoId <input id="todoId" onChange={captureTodo} />
       </label>
-      <button onClick={fetchTodos}>Fetch TODO</button>
-      <h1>{JSON.stringify(data)}</h1>
+      <button onClick={fetchTodos} id="fetchtodo">
+        Fetch TODO
+      </button>
+      <h1 id="output">{JSON.stringify(data)}</h1>
     </div>
   );
 };
