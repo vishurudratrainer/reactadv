@@ -20,6 +20,7 @@ import ModifiedTextComponent from "../hoc/ModifiedTextComponent";
 import BoldComponent from "../hoc/BoldComponent";
 import TodosReducer from "../reducer/TodosReducer";
 import TodosAxiosReducer from "../reducer/TodosAxiosReducer";
+import LoadLazy from "../lazy/LoadLazy";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   const [username, setUsername] = useState("");
@@ -32,9 +33,13 @@ export default function Nav() {
           <div>
             <Link to="/">Home</Link>
             <br />
-            <Link to="/slide" id="slide">Slide</Link>
+            <Link to="/slide" id="slide">
+              Slide
+            </Link>
             <br />
-            <Link to="/student" id="student">Student</Link>
+            <Link to="/student" id="student">
+              Student
+            </Link>
             <br />
             <Link to="/calculator">Calculator</Link>
             <br />
@@ -59,8 +64,14 @@ export default function Nav() {
             <Link to="/hoc2">HOC2</Link>
             <br />
             <Link to="/todosreducer">Todos Reducer</Link>
-            <br/>
-            <Link to="/todosAxiosReducer" id="todosAxiosReducer">Todos Axios Reducer</Link>
+            <br />
+            <Link to="/todosAxiosReducer" id="todosAxiosReducer">
+              Todos Axios Reducer
+            </Link>
+            <br />
+            <Link to="/lazy" id="lazy">
+              Todos Axios Reducer
+            </Link>
           </div>
         )}
         <Routes>
@@ -84,16 +95,16 @@ export default function Nav() {
             <Route path="/todosaxios" element={<TodosAxios />} />
             <Route path="/themes" element={<Themes setTheme={setTheme} />} />
             <Route path="/hoc1" element={<InputComponent type="text" />} />
-            <Route path="/todosreducer"  element={<TodosReducer/>}/>
-            <Route path="/todosAxiosReducer" element={<TodosAxiosReducer/>}/>
+            <Route path="/todosreducer" element={<TodosReducer />} />
+            <Route path="/todosAxiosReducer" element={<TodosAxiosReducer />} />
+            <Route path="/lazy" element={<LoadLazy />} />
+
             <Route
               path="/hoc2"
               element={
                 <ModifiedTextComponent
                   text="<p>Hello how are u</p>"
-                  Paragragh={BoldComponent
-                  
-                  }
+                  Paragragh={BoldComponent}
                 />
               }
             />
