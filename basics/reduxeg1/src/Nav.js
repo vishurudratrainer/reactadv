@@ -1,11 +1,11 @@
 
 import {Route,Routes,Link} from 'react-router-dom'
-import Todos from "./Todos"
+import Counter from './Counter'
 export default function Nav(){
 
     return(<div>
         <Routes>
-            <Route path='/' element={<Todos/>}/>
+            <Route path='/' element={<Counter/>}/>
         </Routes>
     </div>)
 }
