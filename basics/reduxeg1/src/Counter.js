@@ -10,7 +10,7 @@ const Counter = () => {
     <div>
       <button onClick={inc}>INC</button>
       <button onClick={dec}>DEC</button>
-      <h1>{JSON.stringify(data.counter.counter)}</h1>
+      <h1>{JSON.stringify(data.counter.count)}</h1>
     </div>
   );
 };
