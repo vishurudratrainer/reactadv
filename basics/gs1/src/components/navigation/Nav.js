@@ -18,6 +18,7 @@ import Themes from "../themes/Themes";
 import InputComponent from "../hoc/InputComponent";
 import ModifiedTextComponent from "../hoc/ModifiedTextComponent";
 import BoldComponent from "../hoc/BoldComponent";
+import TodosReducer from "../reducer/TodosReducer";
 export default function Nav() {
   const [isUserAuth, setIsUserAuth] = useState(false);
   const [username, setUsername] = useState("");
@@ -56,6 +57,7 @@ export default function Nav() {
             <br />
             <Link to="/hoc2">HOC2</Link>
             <br />
+            <Link to="/todosreducer">Todos Reducer</Link>
           </div>
         )}
         <Routes>
@@ -79,6 +81,7 @@ export default function Nav() {
             <Route path="/todosaxios" element={<TodosAxios />} />
             <Route path="/themes" element={<Themes setTheme={setTheme} />} />
             <Route path="/hoc1" element={<InputComponent type="text" />} />
+            <Route path="/todosreducer"  element={<TodosReducer/>}/>
             <Route
               path="/hoc2"
               element={
