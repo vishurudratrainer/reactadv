@@ -32,9 +32,9 @@ export default function Nav() {
           <div>
             <Link to="/">Home</Link>
             <br />
-            <Link to="/slide">Slide</Link>
+            <Link to="/slide" id="slide">Slide</Link>
             <br />
-            <Link to="/student">Student</Link>
+            <Link to="/student" id="student">Student</Link>
             <br />
             <Link to="/calculator">Calculator</Link>
             <br />
