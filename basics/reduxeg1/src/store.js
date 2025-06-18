@@ -4,14 +4,17 @@ import TodoReducer from "./reducers/TodoReducer";
 import { TodosMiddleware } from "./middlewares/TodosMiddleware";
 import CommentsReducer from "./reducers/CommentsReducer";
 import { CommentsMiddleware } from "./middlewares/CommentsMiddleware";
+import DogReducer from "./reducers/DogReducer";
+import { DogMiddleware } from "./middlewares/DogMiddleware";
 
 const store = legacy_createStore(
   combineReducers({
     counter: CounterReducer,
     todos: TodoReducer,
     comments: CommentsReducer,
+    dogs:DogReducer
   }),
-  applyMiddleware(TodosMiddleware, CommentsMiddleware)
+  applyMiddleware(TodosMiddleware, CommentsMiddleware,DogMiddleware)
 );
 
 export default store;
